@@ -3,6 +3,6 @@ rvm:
   - "3.5"
 install:
   - pip install coveralls
-script: coverage -m unittest
+script: coverage run -m unittest
 after_success:
   coveralls
