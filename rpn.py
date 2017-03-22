@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import operator
+import colored
+from colored import stylize
 
 OPERATORS = {
 	'+': operator.add,
@@ -10,6 +12,12 @@ OPERATORS = {
 	'^': operator.pow,
 	'%': operator.mod,
 }
+
+def foo():
+	stack = list()
+	num = 4
+	pass
+
 
 def calculate(arg):
 	stack = list()
@@ -28,8 +36,12 @@ def calculate(arg):
 
 def main():
 	while True:
-		calculate(input("rpn calc> "))
-		print("Result:", result)
+		result = calculate(input("rpn calc> "))
+		if result < 0:
+			print("Result:")
+			print(stylize(result, colored.fg("red")))
+		else:
+			print("Result:", result)
 
 
 if __name__ == '__main__': # Note
